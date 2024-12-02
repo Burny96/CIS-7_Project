@@ -23,9 +23,8 @@ void initializeMessageAndKey()
     string message, key;
 
     // Input message
-    cout << "Enter your message (letters only): ";
+    cout << "\nEnter your message (letters only): ";
     getline(cin, message);
-   
     while (!isValidMessage(message)) 
     {
         cout << "Invalid message, use letters only. Try again: ";
@@ -33,9 +32,8 @@ void initializeMessageAndKey()
     }
 
     // Input key
-    cout << "Enter your key (letters only): ";
+    cout << "\nEnter your key (letters only): ";
     getline(cin, key);
-    
     while (!isValidMessage(key) || key.empty()) 
     {
         cout << "Invalid key, it must be letters only and not empty. Try again: ";
@@ -49,7 +47,6 @@ void initializeMessageAndKey()
     // Key mapping to match the message length
     repeatedKey = "";
     int keyIndex = 0;
-   
     for (char c : message) 
     {
         if (c == ' ')
@@ -70,7 +67,6 @@ void initializeMessageAndKey()
 void performEncryption() 
 {
     string encryptedMessage = "";
-    
     for (int i = 0; i < plaintextMessage.length(); ++i) 
     {
         if (plaintextMessage[i] == ' ')
@@ -84,14 +80,13 @@ void performEncryption()
             encryptedMessage += 'A' + (row + col) % 26;
         }
     }
-    cout << "Encrypted Message: " << encryptedMessage << endl;
+    cout << "\nEncrypted Message: " << encryptedMessage << endl << endl;
 }
 
 // Decrypt message using Vigenère cipher
 void performDecryption() 
 {
     string decryptedMessage = "";
-   
     for (int i = 0; i < plaintextMessage.length(); ++i) 
     {
         if (plaintextMessage[i] == ' ') 
@@ -105,13 +100,12 @@ void performDecryption()
             decryptedMessage += 'A' + (row - col + 26) % 26;
         }
     }
-    cout << "Decrypted Message: " << decryptedMessage << endl;
+    cout << "\nDecrypted Message: " << decryptedMessage << endl << endl;
 }
 
 int main()
 {
     int choice;
-   
     while (true) 
     {
         cout << "1. Encrypt\n2. Decrypt\n3. Exit\nChoose an option: ";
@@ -130,7 +124,7 @@ int main()
         }
         else if (choice == 3) 
         {
-            cout << "Goodbye!" << endl;
+            cout << "\nGoodbye!" << endl;
             break;
         }
         else 
