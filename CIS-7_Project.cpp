@@ -83,7 +83,7 @@ void performEncryption()
     cout << "\nEncrypted Message: " << encryptedMessage << endl << endl;
 }
 
-// Decrypt message using Vigenère cipher
+// Decrypt message using Vigenere cipher
 void performDecryption() 
 {
     string decryptedMessage = "";
