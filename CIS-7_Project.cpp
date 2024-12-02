@@ -27,7 +27,7 @@ void initializeMessageAndKey()
     getline(cin, message);
     while (!isValidMessage(message)) 
     {
-        cout << "Invalid message, use letters only. Try again: ";
+        cout << "\nInvalid message, use letters only. Try again: ";
         getline(cin, message);
     }
 
@@ -36,7 +36,7 @@ void initializeMessageAndKey()
     getline(cin, key);
     while (!isValidMessage(key) || key.empty()) 
     {
-        cout << "Invalid key, it must be letters only and not empty. Try again: ";
+        cout << "\nInvalid key, it must be letters only and not empty. Try again: ";
         getline(cin, key);
     }
 
@@ -129,7 +129,7 @@ int main()
         }
         else 
         {
-            cout << "Invalid choice. Try again.\n";
+            cout << "\nInvalid choice. Try again.\n\n";
         }
     }
 
