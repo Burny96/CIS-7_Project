@@ -25,6 +25,7 @@ void initializeMessageAndKey()
     // Input message
     cout << "Enter your message (letters only): ";
     getline(cin, message);
+   
     while (!isValidMessage(message)) 
     {
         cout << "Invalid message, use letters only. Try again: ";
@@ -34,6 +35,7 @@ void initializeMessageAndKey()
     // Input key
     cout << "Enter your key (letters only): ";
     getline(cin, key);
+    
     while (!isValidMessage(key) || key.empty()) 
     {
         cout << "Invalid key, it must be letters only and not empty. Try again: ";
@@ -47,6 +49,7 @@ void initializeMessageAndKey()
     // Key mapping to match the message length
     repeatedKey = "";
     int keyIndex = 0;
+   
     for (char c : message) 
     {
         if (c == ' ')
@@ -67,6 +70,7 @@ void initializeMessageAndKey()
 void performEncryption() 
 {
     string encryptedMessage = "";
+    
     for (int i = 0; i < plaintextMessage.length(); ++i) 
     {
         if (plaintextMessage[i] == ' ')
@@ -83,10 +87,11 @@ void performEncryption()
     cout << "Encrypted Message: " << encryptedMessage << endl;
 }
 
-// Decrypt message using Vigenère cipher
+// Decrypt message using VigenÃ¨re cipher
 void performDecryption() 
 {
     string decryptedMessage = "";
+   
     for (int i = 0; i < plaintextMessage.length(); ++i) 
     {
         if (plaintextMessage[i] == ' ') 
@@ -106,6 +111,7 @@ void performDecryption()
 int main()
 {
     int choice;
+   
     while (true) 
     {
         cout << "1. Encrypt\n2. Decrypt\n3. Exit\nChoose an option: ";
